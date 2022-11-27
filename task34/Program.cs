@@ -3,13 +3,13 @@
 
 [345, 897, 568, 234] -> 2 */
 
-int[] InitArray(int size)
+int[] InitArray(int size, int min, int max)
 {
     int[] array = new int[size];
     Random rnd = new Random();
     for (int i = 0; i < size; i++)
     {
-        array[i] = rnd.Next(100, 1000);
+        array[i] = rnd.Next(min, max + 1);
     }
     return array;
 }
@@ -36,7 +36,7 @@ int GetSumEvenNum(int[] array)
 }
 
 
-int[] arr = InitArray(8);
+int[] arr = InitArray(8, 100, 999);
 PrintArray(arr);
 int res = GetSumEvenNum(arr);
 Console.WriteLine($"Сумма четных чисел в массиве равна -> {res}");
